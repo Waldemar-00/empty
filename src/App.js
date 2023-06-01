@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
-
+import './App.css'
 function App() {
+  const name = 'Jone'
+  const age = 28
+  const array = ['Jack', 34]
+  const object = {
+    work: 'Frontend',
+    job: 'React'
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="div">
+      <p>name: {name} <br/> age: {age} <br/> work: {object.work}</p>
+      <hr/>
+      <p>name: {array[0]} <br/> age: {array[1]} <br/> work: {object.job} </p>
+      <p></p>
     </div>
-  );
+  )
 }
 
 export default App;
