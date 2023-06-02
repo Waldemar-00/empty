@@ -10,13 +10,14 @@ class InsertText extends React.Component {
       this.elementRef = element
     }
   }
-  // componentDidMount() {
-    // if (this.elementRef)this.onClickButton()
-  // }
-  onClickButton = () => {
-    // this.inputRef.current.focus()
-    if(this.elementRef) this.elementRef.focus()
+  componentDidMount() {
+    // if (this.elementRef) this.onClickButton()
+    this.elementRef.focus() //API of browser, it is using after create DOM
   }
+  // onClickButton = () => {
+    //this.inputRef.current.focus()
+    // if(this.elementRef) this.elementRef.focus()
+  // }
   render() {
     return (
       <>
