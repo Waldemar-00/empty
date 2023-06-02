@@ -14,3 +14,10 @@
   line-height: 1.7rem;
   font-weight: 550;
 }
+.inputRef {
+  width: 150px;
+  height: 20px;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
