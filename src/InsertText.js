@@ -5,7 +5,8 @@ class InsertText extends React.Component {
   inputtRef = null
   buttonRef = React.createRef()
   buttonFromClass = React.createRef()
-  inputFocus = React.createRef()
+  blurFocus = React.createRef()
+  getFocus = React.createRef()
   putInElementRef = (element) => {
       this.inputRef = element // put element in inputRef property 
   }
@@ -18,12 +19,17 @@ class InsertText extends React.Component {
     this.buttonRef.current.style.backgroundColor = 'rgb(176, 242, 176)'
   }
   changeInputFocus = () => {
-    
+    if (this.blurFocus.current.value === 'aaaa') {
+      this.getFocus.current.focus()
+    }
   }
   render() {
     return (
       <>
-        <input className='inputRef' ref={this.inputFocus}></input>
+        <label htmlFor='blur'>Blur focus</label>
+        <input id='blur' className='inputRef' ref={this.blurFocus} onChange={this.changeInputFocus}></input>
+        <label htmlFor='getFocus'>Get focus</label>
+        <input id='getFocus' className='inputRef' ref={this.getFocus}></input>
         <CreateInput ref={this.putInElementRef} />
         <button className='btnRef' ref={this.buttonRef} onClick={this.onColorChange}>Click me for focus!</button>
         <CreateButton ref={this.buttonFromClass}/>
