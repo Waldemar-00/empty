@@ -2,42 +2,54 @@ import React from 'react'
 import './App.css'
 
 class InsertText extends React.Component {
-  constructor(props) {
-    super(props)
-    this.elementRef = null
-    this.putInElementRef = (element) => {
-      this.elementRef = element
-    }
+  inputtRef = null
+  buttonRef = React.createRef()
+  buttonFromClass = React.createRef()
+  inputFocus = React.createRef()
+  putInElementRef = (element) => {
+      this.inputRef = element // put element in inputRef property 
   }
   componentDidMount() {
-    console.log(this.elementRef)
-    this.elementRef.inputRef.focus()
-     //API of browser, it is using after create DOM
-    // no API for class
+    this.inputRef.inputRef.current.focus()
+    // put element in inputRef property 
+  }
+  onColorChange = () => {
+    this.buttonRef.current.innerText = "SUCCESS"
+    this.buttonRef.current.style.backgroundColor = 'rgb(176, 242, 176)'
+  }
+  changeInputFocus = () => {
+    
   }
   render() {
     return (
       <>
+        <input className='inputRef' ref={this.inputFocus}></input>
         <CreateInput ref={this.putInElementRef} />
-        {/* no API for class */}
-        <button className='btnRef'>Click me for focus!</button>
+        <button className='btnRef' ref={this.buttonRef} onClick={this.onColorChange}>Click me for focus!</button>
+        <CreateButton ref={this.buttonFromClass}/>
       </>
     )
   }
 }
 class CreateInput extends React.Component {
-  constructor(props) {
-    super(props)
-    this.inputRef = null
+  inputRef = React.createRef() // put {current: element} in inputRef property 
+  render() {
+    return (
+      <input className='inputRef' type="text" name="name" ref={this.inputRef}></input>
+    )
   }
-  putInRef = (element) => {
-    this.inputRef = element
+}
+class CreateButton extends React.Component {
+  buttonRef = React.createRef() // put {current: element} in inputRef property
+  onChangeColorInClass = () => {
+    this.buttonRef.current.style.backgroundColor = 'rgb(247, 163, 163)'
+    this.buttonRef.current.innerText = 'color changed'
   }
   render() {
     return (
-      <input className='inputRef' type="text" name="name" ref={this.putInRef}></input>
+      <button className='inputRef' type="text" name="name" ref={this.buttonRef} onClick={this.onChangeColorInClass}>Button from class</button>
       )
     }
-  }
+  }  
 
 export default InsertText
