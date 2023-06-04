@@ -4,16 +4,29 @@ import { Container } from 'react-bootstrap';
 import './App.css';
 
 class Form extends Component {
-    num = 1
-    handleClick = (num) => {
-        console.log(`Click - ${num}`)
+    state = {
+        message: false,
+    }
+    componentDidMount() {
+        const timer = setTimeout(this.handleClick, 3000)
+        return clearTimeout(timer)
+    }
+    handleClick = () => {
+        // const div = document.querySelector('.divRemove')
+        // console.log(div)
+        // if (div) {
+            // document.querySelector('form').remove(div)
+        // }
+        this.setState(({ message }) => ({
+            message: !message
+        }))
     }
     render() {
         return (
             <Container>
                 <form className="w-50 border mt-5 p-3 m-auto" 
                     style={{ 'overflow': 'hidden' }}
-                    onClick={() => this.handleClick(this.num++)}>
+                    onClick={this.handleClick}>
                     <div className="mb-3">
                         <label htmlFor="exampleFormControlInput1" className="form-label">Email address</label>
                         <input  type="email" className="form-control" id="exampleFormControlInput1" placeholder="name@example.com"/>
@@ -22,9 +35,9 @@ class Form extends Component {
                         <label htmlFor="exampleFormControlTextarea1" className="form-label">Example textarea</label>
                         <textarea className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                     </div>
-                    <PortalForMessage>
-                        <Message/>
-                    </PortalForMessage>
+                    {this.state.message ?   <PortalForMessage>
+                                                <Message />
+                                            </PortalForMessage> : null}
                 </form>
             </Container>
         )
@@ -37,7 +50,7 @@ const PortalForMessage = (props) => {
 }
 const Message = () => {
     return (
-        <div 
+        <div className='divRemove'
             style={{'width': '500px', 
                     'height': '150px', 
                     'backgroundColor': 'red', 
