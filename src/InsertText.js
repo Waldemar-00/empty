@@ -2,7 +2,6 @@ import React from 'react'
 import './App.css'
 
 class InsertText extends React.Component {
-  inputtRef = null
   buttonRef = React.createRef()
   buttonFromClass = React.createRef()
   blurFocus = React.createRef()

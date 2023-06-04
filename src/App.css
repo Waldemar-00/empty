@@ -16,11 +16,12 @@
 }
 .inputRef {
   width: 150px;
-  height: 20px;
+  height: 30px;
   display: block;
   margin: 0 auto;
   margin-bottom: 10px;
 }
 .btnRef {
+  height: 30px;
   margin-bottom: 10px;
 }
