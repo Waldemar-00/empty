@@ -8,17 +8,11 @@ class Form extends Component {
         message: false,
     }
     componentDidMount() {
-        const timer = setTimeout(this.handleClick, 3000)
-        return clearTimeout(timer)
+        setTimeout(this.handleClick, 3000)
     }
     handleClick = () => {
-        // const div = document.querySelector('.divRemove')
-        // console.log(div)
-        // if (div) {
-            // document.querySelector('form').remove(div)
-        // }
         this.setState(({ message }) => ({
-            message: !message
+            message: !message //create toggle
         }))
     }
     render() {
