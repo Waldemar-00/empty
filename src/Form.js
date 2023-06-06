@@ -3,6 +3,7 @@ import './App.css'
 function MyForm() {
   const [inputs, setInputs] = useState({})
   const [car, setCar] = useState('BMW')
+  const [textarea, setTexarea] = useState('write your message')
 
   const handleChange = (event) => {
     const name = event.target.name
@@ -12,11 +13,15 @@ function MyForm() {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert(`${inputs.username} ${inputs.age} used ${car}`)
+    alert(`${inputs.username} ${inputs.age} used ${car}, your's message: ${textarea}`)
   }
   const handleChangeCar = (event) => {
     event.preventDefault()
     setCar(event.target.value)
+  }
+  const onChangeText = (event) => {
+    event.preventDefault()
+    setTexarea(event.target.value)
   }
 
   return (
@@ -43,6 +48,7 @@ function MyForm() {
           <option>BMW</option>
           <option>Reno</option>
         </select>
+        <textarea value={textarea} onChange={onChangeText}></textarea>
       </form>
     </div>
   )
