@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './App.css'
 function MyForm() {
   const [inputs, setInputs] = useState({})
+  const [car, setCar] = useState('BMW')
 
   const handleChange = (event) => {
     const name = event.target.name
@@ -11,7 +12,11 @@ function MyForm() {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert(`${inputs.username} ${inputs.age}`)
+    alert(`${inputs.username} ${inputs.age} used ${car}`)
+  }
+  const handleChangeCar = (event) => {
+    event.preventDefault()
+    setCar(event.target.value)
   }
 
   return (
@@ -31,8 +36,14 @@ function MyForm() {
             value={inputs.age || ""} 
             onChange={handleChange}
           />
-          <input type="submit" />
-        </form>
+        <input type="submit" />
+        <select value={car} onChange={handleChangeCar}>
+          <option>Fiat</option>
+          <option>Volvo</option>
+          <option>BMW</option>
+          <option>Reno</option>
+        </select>
+      </form>
     </div>
   )
 }

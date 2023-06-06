@@ -30,7 +30,7 @@
   align-content: center;
   justify-content: center;
   width: 500px;
-  height: 200px;
+  min-height: 200px;
   margin: 50px auto 50px auto;
 }
 .formWithHook {
