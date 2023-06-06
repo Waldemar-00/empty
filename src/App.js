@@ -1,6 +1,7 @@
 import './App.css'
 import InsertText from './InsertText'
 import Portal from './Portal'
+import MyForm from './Form'
 function App() {
   const name = 'Jone'
   const age = 28
@@ -18,6 +19,7 @@ function App() {
       <InsertText />
       </div>
       <Portal />
+      <MyForm />
     </>
   )
 }
