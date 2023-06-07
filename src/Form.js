@@ -23,10 +23,41 @@ function MyForm() {
     event.preventDefault()
     setTexarea(event.target.value)
   }
-
+  const styles = {
+    cssStyle : {
+      fontSize: '40px',
+      marginTop: '50px',
+      color: 'lightblue',
+      textAlign: 'center'
+    },
+    wrapper :  {
+      display: 'flex',
+      alignContent: 'center',
+      justifyContent: 'center',
+      flexDirection: "column",
+      width: '500px',
+      minHeight: '200px',
+      margin: '50px auto 50px auto'
+    },
+    formWithHook :  {
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      gap: '20px 20px',
+      alignContent: 'center'
+    },
+    hr : {
+    marginTop: '35px',
+    marginBottom: 0,
+    height: '4px',
+    backgroundColor: 'blue',
+    border: 'none'
+    }
+  }
+  
   return (
-    <div className="wrapper">
-      <form className='formWithHook' onSubmit={handleSubmit}> 
+    <div style={styles.wrapper}>
+      <form style={styles.formWithHook} onSubmit={handleSubmit}> 
         <input 
           type="text" 
           name="username" 
@@ -50,6 +81,8 @@ function MyForm() {
         </select>
         <textarea value={textarea} onChange={onChangeText}></textarea>
       </form>
+      <hr style={styles.hr}/>
+      <h2 style={styles.cssStyle}>CSS Styles</h2>
     </div>
   )
 }

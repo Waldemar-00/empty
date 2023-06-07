@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import {createPortal} from 'react-dom'
-import { Container } from 'react-bootstrap';
-import './App.css';
+import { Container } from 'react-bootstrap'
+import './App.css'
 
 class Form extends Component {
     state = {
