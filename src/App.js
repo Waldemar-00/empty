@@ -3,6 +3,7 @@ import InsertText from './InsertText'
 import Portal from './Portal'
 import MyForm from './Form'
 import MyCar from './CarObject'
+import Counter from './useEffect'
 function App() {
   const name = 'Jone'
   const age = 28
@@ -22,6 +23,7 @@ function App() {
       <Portal />
       <MyForm />
       <MyCar />
+      <Counter/>
     </>
   )
 }
