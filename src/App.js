@@ -6,6 +6,7 @@ import MyCar from './hooks/CarObject'
 import Counter from './hooks/useEffect'
 import Component1 from './hooks/MoveProps'
 import ComponentWithContext from './hooks/createContext'
+import KeepPreviousValue from './hooks/useRef'
 function App() {
   const name = 'Jone'
   const age = 28
@@ -32,7 +33,8 @@ function App() {
         border: 'none', backgroundColor: 'lightblue',
         display: 'block', margin: '15px auto'
       }} />
-      <ComponentWithContext/>
+      <ComponentWithContext />
+      <KeepPreviousValue/>
     </>
   )
 }
