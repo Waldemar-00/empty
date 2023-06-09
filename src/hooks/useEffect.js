@@ -4,7 +4,6 @@ const Counter = () => {
   const [multi, setMulti] = useState(0)
   
   useEffect(() => {
-    // setTimeout(() => {setCount(count => count + 1)}, 1000)
     setMulti(() => count * 2)
   }, [count])
   const onChangeCounter = () => {
@@ -27,6 +26,5 @@ const Counter = () => {
     <h2 style={styles.h2}>After multiplication: {multi} </h2>
     </>
   )
-
 }
 export default Counter

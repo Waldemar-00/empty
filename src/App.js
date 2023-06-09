@@ -1,9 +1,10 @@
 import './App.css'
 import InsertText from './InsertText'
 import Portal from './Portal'
-import MyForm from './Form'
-import MyCar from './CarObject'
-import Counter from './useEffect'
+import MyForm from './hooks/Form'
+import MyCar from './hooks/CarObject'
+import Counter from './hooks/useEffect'
+import Component1 from './hooks/MoveProps'
 function App() {
   const name = 'Jone'
   const age = 28
@@ -23,7 +24,8 @@ function App() {
       <Portal />
       <MyForm />
       <MyCar />
-      <Counter/>
+      <Counter />
+      <Component1/>
     </>
   )
 }

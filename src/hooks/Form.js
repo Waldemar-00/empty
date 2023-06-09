@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import './App.css'
+import '../App.css'
 function MyForm() {
   const [inputs, setInputs] = useState({})
   const [car, setCar] = useState('BMW')
