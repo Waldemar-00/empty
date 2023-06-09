@@ -5,6 +5,7 @@ import MyForm from './hooks/Form'
 import MyCar from './hooks/CarObject'
 import Counter from './hooks/useEffect'
 import Component1 from './hooks/MoveProps'
+import ComponentWithContext from './hooks/createContext'
 function App() {
   const name = 'Jone'
   const age = 28
@@ -25,7 +26,13 @@ function App() {
       <MyForm />
       <MyCar />
       <Counter />
-      <Component1/>
+      <Component1 />
+      <hr style={{
+        height: '5px', width: '500px',
+        border: 'none', backgroundColor: 'lightblue',
+        display: 'block', margin: '15px auto'
+      }} />
+      <ComponentWithContext/>
     </>
   )
 }
