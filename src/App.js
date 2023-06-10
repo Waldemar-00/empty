@@ -22,17 +22,13 @@ function App() {
       <hr/>
       <p>name: {array[0]} <br /> age: {array[1]} <br /> work: {object.job}</p>
       <InsertText />
-      </div>
+    </div>
       <Portal />
       <MyForm />
       <MyCar />
       <Counter />
       <Component1 />
-      <hr style={{
-        height: '5px', width: '500px',
-        border: 'none', backgroundColor: 'lightblue',
-        display: 'block', margin: '15px auto'
-      }} />
+      <hr style={{height: '5px', width: '500px',border: 'none', backgroundColor: 'lightblue',display: 'block', margin: '15px auto'}} />
       <ComponentWithContext />
       <KeepPreviousValue/>
     </>
